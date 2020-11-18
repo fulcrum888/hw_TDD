@@ -20,7 +20,7 @@ public class CreditCalculator {
     }
 
     public double calculateMonthlyPayment() {
-        return -1;
+        return loanAmount * this.calculateAnnuity();
     }
 
     public double calculateFullAmount() {

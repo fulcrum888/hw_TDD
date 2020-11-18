@@ -5,7 +5,7 @@ public class TestCreditCalculator {
     public void testCalculateAnnuity() {
         //given
         final CreditCalculator original =
-                new CreditCalculator(6, 1_0000_000, 12);
+                new CreditCalculator(6, 1_000_000, 12);
         double argument = 0.086;
         //when
         final double result = original.calculateAnnuity() - argument;
@@ -19,7 +19,7 @@ public class TestCreditCalculator {
     public void testCalculateMonthlyPayment() {
         //given
         final CreditCalculator original =
-                new CreditCalculator(6, 1_0000_000, 12);
+                new CreditCalculator(6, 1_000_000, 12);
         double argument = 86066.43;
 
         //when
@@ -27,14 +27,15 @@ public class TestCreditCalculator {
 
         //then
         Assertions.assertTrue(Math.abs(result) < 0.001,
-                "Неверное вычисление размера ежемесячного платежа");
+                "Неверное вычисление размера ежемесячного платежа " + result
+        + " " + original.calculateMonthlyPayment() + " " + argument);
     }
 
     @Test
     public void testCalculateFullAmount() {
         //given
         final CreditCalculator original =
-                new CreditCalculator(6, 1_0000_000, 12);
+                new CreditCalculator(6, 1_000_000, 12);
         double argument = 1032797.16;
 
         //when
@@ -49,7 +50,7 @@ public class TestCreditCalculator {
     public void testCalculateOverpayment() {
         //given
         final CreditCalculator original =
-                new CreditCalculator(6, 1_0000_000, 12);
+                new CreditCalculator(6, 1_000_000, 12);
         double argument = 32797.16;
 
         //when
