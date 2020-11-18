@@ -10,7 +10,13 @@ public class CreditCalculator {
     }
 
     public double calculateAnnuity() {
-        return -1;
+        double monthlyRate = interestRate/(12*100);
+        if (interestRate == 0) {
+            return 1/loanMonths;
+        } else {
+            return monthlyRate * Math.pow(monthlyRate + 1, loanMonths) /
+                    (Math.pow(monthlyRate + 1, loanMonths) - 1);
+        }
     }
 
     public double calculateMonthlyPayment() {
