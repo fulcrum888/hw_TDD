@@ -26,9 +26,8 @@ public class TestCreditCalculator {
         final double result = original.calculateMonthlyPayment() - argument;
 
         //then
-        Assertions.assertTrue(Math.abs(result) < 0.001,
-                "Неверное вычисление размера ежемесячного платежа " + result
-        + " " + original.calculateMonthlyPayment() + " " + argument);
+        Assertions.assertTrue(Math.abs(result) < 0.01,
+                "Неверное вычисление размера ежемесячного платежа");
     }
 
     @Test
@@ -42,8 +41,8 @@ public class TestCreditCalculator {
         final double result = original.calculateFullAmount() - argument;
 
         //then
-        Assertions.assertTrue(Math.abs(result) < 0.001,
-                "неверное вычисление полной стоимости кредита");
+        Assertions.assertTrue(Math.abs(result) < 0.01,
+                "Неверное вычисление полной стоимости кредита");
     }
 
     @Test
@@ -57,7 +56,7 @@ public class TestCreditCalculator {
         final double result = original.calculateOverpayment() - argument;
 
         //then
-        Assertions.assertTrue(Math.abs(result) < 0.001,
+        Assertions.assertTrue(Math.abs(result) < 0.01,
                 "неверное вычисление размера переплаты");
     }
 }

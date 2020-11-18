@@ -24,7 +24,7 @@ public class CreditCalculator {
     }
 
     public double calculateFullAmount() {
-        return -1;
+        return loanMonths * this.calculateMonthlyPayment();
     }
 
     public double calculateOverpayment() {
